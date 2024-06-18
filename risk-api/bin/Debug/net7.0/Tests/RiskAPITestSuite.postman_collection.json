@@ -1,0 +1,819 @@
+{
+	"info": {
+		"_postman_id": "c5a28c22-44a8-47da-b99e-5617433705e0",
+		"name": "RiskAPITestSuite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34296787"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Successful Registration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Registration successful'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.eql(\"Registration successful\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test-email@not-a-webisite.com\",\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"Testerson\",\r\n    \"userName\": \"test\",\r\n    \"password\": \"TestPassword#123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Account/Register",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Duplicate Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Code is 'DuplicateUserName' and Description contains 'Username 'test' is already taken.'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].Code).to.equal(\"DuplicateUserName\");\r",
+									"    pm.expect(jsonData[0].Description).to.include(\"Username 'test' is already taken.\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test-email@not-a-webisite.com\",\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"Testerson\",\r\n    \"userName\": \"test\",\r\n    \"password\": \"TestPassword#123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Account/Register",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response has correct Id\", function () {\r",
+									"    var expectedId = \"3da45f81-8607-4ddb-85f5-f8b56b498e7d\";\r",
+									"    var responseData = pm.response.json();\r",
+									"    pm.expect(responseData).to.have.property('Id').that.equals(expectedId);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Kaden\",\r\n    \"password\": \"Password#123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Account/Login",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Username Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Account does not exist'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Account does not exist\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Caden\",\r\n    \"password\": \"Password#123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Account/Login",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Password Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Incorrect password'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Incorrect password\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Kaden\",\r\n    \"password\": \"Password#12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Account/Login",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Friends",
+			"item": [
+				{
+					"name": "Add Friend by UserName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Friend request sent'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Friend request sent\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestorId\": \"861a24ad-81c9-495c-b514-8f17bc662283\",\r\n    \"friendInfo\": \"KadenTest\",\r\n    \"canSeeRealName\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Friends/AddFriend",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Friends",
+								"AddFriend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Friend by Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Friend request sent'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Friend request sent\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestorId\": \"861a24ad-81c9-495c-b514-8f17bc662283\",\r\n    \"friendInfo\": \"krsemerad@gmail.com\",\r\n    \"canSeeRealName\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Friends/AddFriend",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Friends",
+								"AddFriend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Can't find friend to find",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'User could not be found'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"User could not be found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestorId\": \"861a24ad-81c9-495c-b514-8f17bc662283\",\r\n    \"friendInfo\": \"FakeUser\",\r\n    \"canSeeRealName\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Friends/AddFriend",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Friends",
+								"AddFriend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GameBoard",
+			"item": [
+				{
+					"name": "Get Starting Game Board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is not null\", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody).to.not.be.null;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"dd929b69-0204-4719-8abc-6a9ab8ee1ae6\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/GameBoard/StartingGameBoard",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"GameBoard",
+								"StartingGameBoard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Attempt to Get Starting Game Board for Nonexistent Game",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Game not found'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Game not found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"0e9d66eb-4fba-4409-aa3b-27b815e8e6b5\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/GameBoard/StartingGameBoard",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"GameBoard",
+								"StartingGameBoard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Matchmaking",
+			"item": [
+				{
+					"name": "JoinQueue: Did not provide userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Must provide userId'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Must provide userId\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Matchmaking/JoinQueue",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Matchmaking",
+								"JoinQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JoinQueue: Invalid userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'User could not be found'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"User could not be found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"aa342fe3-359c-4bc3-a400-68647da9b5f2\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Matchmaking/JoinQueue",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Matchmaking",
+								"JoinQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JoinQueue: Successful",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Joined queue'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Joined queue\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"78222b95-ff55-4391-ba0b-6cd5ce42996c\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Matchmaking/JoinQueue",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Matchmaking",
+								"JoinQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LeaveQueue: Successful",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Matchmaking canceled'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Matchmaking canceled\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"78222b95-ff55-4391-ba0b-6cd5ce42996c\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Matchmaking/LeaveQueue",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Matchmaking",
+								"LeaveQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LeaveQueue: Did not provide userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'Must provide tokenIdentifier'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"Must provide tokenIdentifier\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Matchmaking/LeaveQueue",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Matchmaking",
+								"LeaveQueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LeaveQueue: Invalid userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is 'User could not be found'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.equal(\"User could not be found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"56b2dccd-7e93-44a3-9df7-b3754dcde2bc\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://raikes-risk.azurewebsites.net/api/Matchmaking/LeaveQueue",
+							"protocol": "https",
+							"host": [
+								"raikes-risk",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Matchmaking",
+								"LeaveQueue"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

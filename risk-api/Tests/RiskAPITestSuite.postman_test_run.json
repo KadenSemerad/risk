@@ -1,0 +1,614 @@
+{
+	"id": "e98aab83-8538-4198-9a30-581410776103",
+	"name": "RiskAPITestSuite",
+	"timestamp": "2024-04-21T15:42:13.145Z",
+	"collection_id": "34296787-c5a28c22-44a8-47da-b99e-5617433705e0",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 32,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-04-21T15:42:05.405Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a0040f0a-5bf2-4005-911d-f69cdaea51df",
+			"name": "Successful Registration",
+			"url": "https://raikes-risk.azurewebsites.net/api/Account/Register",
+			"time": 1394,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is 'Registration successful'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Registration successful'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1394
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is 'Registration successful'": true
+				}
+			]
+		},
+		{
+			"id": "9d03bf08-3525-4e59-b6f8-957d957d3ba1",
+			"name": "Duplicate Account",
+			"url": "https://raikes-risk.azurewebsites.net/api/Account/Register",
+			"time": 327,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Code is 'DuplicateUserName' and Description contains 'Username 'test' is already taken.'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Code is 'DuplicateUserName' and Description contains 'Username 'test' is already taken.'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				327
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Code is 'DuplicateUserName' and Description contains 'Username 'test' is already taken.'": true
+				}
+			]
+		},
+		{
+			"id": "46c0e0ec-96dd-4379-ad93-e0616098599f",
+			"name": "Valid Login",
+			"url": "https://raikes-risk.azurewebsites.net/api/Account/Login",
+			"time": 160,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response has correct Id": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has correct Id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				160
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response has correct Id": true
+				}
+			]
+		},
+		{
+			"id": "2c02e6d5-40b0-49d5-837e-6fc5bb43d7e5",
+			"name": "Wrong Username Login",
+			"url": "https://raikes-risk.azurewebsites.net/api/Account/Login",
+			"time": 488,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'Account does not exist'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Account does not exist'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				488
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'Account does not exist'": true
+				}
+			]
+		},
+		{
+			"id": "d5ed2192-db77-4252-865d-9568aa4f072e",
+			"name": "Wrong Password Login",
+			"url": "https://raikes-risk.azurewebsites.net/api/Account/Login",
+			"time": 274,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'Incorrect password'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Incorrect password'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				274
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'Incorrect password'": true
+				}
+			]
+		},
+		{
+			"id": "8bcecf26-72d6-4e57-80f5-f2fa1aba4b00",
+			"name": "Add Friend by UserName",
+			"url": "https://raikes-risk.azurewebsites.net/api/Friends/AddFriend",
+			"time": 1277,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is 'Friend request sent'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Friend request sent'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1277
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is 'Friend request sent'": true
+				}
+			]
+		},
+		{
+			"id": "74008eb0-c8af-466c-a7d9-216816f1adeb",
+			"name": "Add Friend by Email",
+			"url": "https://raikes-risk.azurewebsites.net/api/Friends/AddFriend",
+			"time": 1374,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is 'Friend request sent'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Friend request sent'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1374
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is 'Friend request sent'": true
+				}
+			]
+		},
+		{
+			"id": "e39aee97-dbe3-452a-8b76-8b864b1fef26",
+			"name": "Can't find friend to find",
+			"url": "https://raikes-risk.azurewebsites.net/api/Friends/AddFriend",
+			"time": 161,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'User could not be found'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'User could not be found'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				161
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'User could not be found'": true
+				}
+			]
+		},
+		{
+			"id": "9afc8b0b-73f7-4d44-9001-f63db8ec658e",
+			"name": "Get Starting Game Board",
+			"url": "https://raikes-risk.azurewebsites.net/api/GameBoard/StartingGameBoard",
+			"time": 228,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is not null": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not null": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				228
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is not null": true
+				}
+			]
+		},
+		{
+			"id": "22615c03-a634-4404-a03e-a89ec5ec5bd5",
+			"name": "Attempt to Get Starting Game Board for Nonexistent Game",
+			"url": "https://raikes-risk.azurewebsites.net/api/GameBoard/StartingGameBoard",
+			"time": 83,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'Game not found'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Game not found'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'Game not found'": true
+				}
+			]
+		},
+		{
+			"id": "800c0a9b-cfb0-4873-aabf-80a3e203d9da",
+			"name": "JoinQueue: Did not provide userId",
+			"url": "https://raikes-risk.azurewebsites.net/api/Matchmaking/JoinQueue",
+			"time": 46,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'Must provide userId'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Must provide userId'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				46
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'Must provide userId'": true
+				}
+			]
+		},
+		{
+			"id": "3058902f-b8b6-470a-8216-a9e095272a27",
+			"name": "JoinQueue: Invalid userId",
+			"url": "https://raikes-risk.azurewebsites.net/api/Matchmaking/JoinQueue",
+			"time": 83,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'User could not be found'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'User could not be found'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'User could not be found'": true
+				}
+			]
+		},
+		{
+			"id": "a2bf013c-8e18-4ca8-8540-9248e1b75faf",
+			"name": "JoinQueue: Successful",
+			"url": "https://raikes-risk.azurewebsites.net/api/Matchmaking/JoinQueue",
+			"time": 124,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is 'Joined queue'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Joined queue'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				124
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is 'Joined queue'": true
+				}
+			]
+		},
+		{
+			"id": "f51a1135-1ba4-4c19-b2b1-b9815c9ea235",
+			"name": "LeaveQueue: Successful",
+			"url": "https://raikes-risk.azurewebsites.net/api/Matchmaking/LeaveQueue",
+			"time": 130,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is 'Matchmaking canceled'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Matchmaking canceled'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				130
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is 'Matchmaking canceled'": true
+				}
+			]
+		},
+		{
+			"id": "311375a2-75cf-4651-a20f-c409c816209b",
+			"name": "LeaveQueue: Did not provide userId",
+			"url": "https://raikes-risk.azurewebsites.net/api/Matchmaking/LeaveQueue",
+			"time": 45,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'Must provide tokenIdentifier'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'Must provide tokenIdentifier'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				45
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'Must provide tokenIdentifier'": true
+				}
+			]
+		},
+		{
+			"id": "f8204d76-50ff-410d-ae69-74b395395c44",
+			"name": "LeaveQueue: Invalid userId",
+			"url": "https://raikes-risk.azurewebsites.net/api/Matchmaking/LeaveQueue",
+			"time": 82,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response is 'User could not be found'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is 'User could not be found'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				82
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response is 'User could not be found'": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 6276,
+	"collection": {
+		"requests": [
+			{
+				"id": "a0040f0a-5bf2-4005-911d-f69cdaea51df",
+				"method": "POST"
+			},
+			{
+				"id": "9d03bf08-3525-4e59-b6f8-957d957d3ba1",
+				"method": "POST"
+			},
+			{
+				"id": "46c0e0ec-96dd-4379-ad93-e0616098599f",
+				"method": "POST"
+			},
+			{
+				"id": "2c02e6d5-40b0-49d5-837e-6fc5bb43d7e5",
+				"method": "POST"
+			},
+			{
+				"id": "d5ed2192-db77-4252-865d-9568aa4f072e",
+				"method": "POST"
+			},
+			{
+				"id": "8bcecf26-72d6-4e57-80f5-f2fa1aba4b00",
+				"method": "POST"
+			},
+			{
+				"id": "74008eb0-c8af-466c-a7d9-216816f1adeb",
+				"method": "POST"
+			},
+			{
+				"id": "e39aee97-dbe3-452a-8b76-8b864b1fef26",
+				"method": "POST"
+			},
+			{
+				"id": "9afc8b0b-73f7-4d44-9001-f63db8ec658e",
+				"method": "POST"
+			},
+			{
+				"id": "22615c03-a634-4404-a03e-a89ec5ec5bd5",
+				"method": "POST"
+			},
+			{
+				"id": "800c0a9b-cfb0-4873-aabf-80a3e203d9da",
+				"method": "POST"
+			},
+			{
+				"id": "3058902f-b8b6-470a-8216-a9e095272a27",
+				"method": "POST"
+			},
+			{
+				"id": "a2bf013c-8e18-4ca8-8540-9248e1b75faf",
+				"method": "POST"
+			},
+			{
+				"id": "f51a1135-1ba4-4c19-b2b1-b9815c9ea235",
+				"method": "POST"
+			},
+			{
+				"id": "311375a2-75cf-4651-a20f-c409c816209b",
+				"method": "POST"
+			},
+			{
+				"id": "f8204d76-50ff-410d-ae69-74b395395c44",
+				"method": "POST"
+			}
+		]
+	}
+}
