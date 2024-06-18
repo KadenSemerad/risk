@@ -1,0 +1,30 @@
+.logo-container {
+    width: 250px;
+    height: 133px;
+    flex-shrink: 0;
+}
+
+.dice-logo {
+    width: 102.396px;
+    height: 107.368px;
+    transform: rotate(15.982deg);
+    flex-shrink: 0;
+    margin-right: -50px;
+    z-index: 1;
+}
+
+.logo-text {
+    width: 689px;
+    height: 316px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--MAIN-colors-main-blue, #264653);
+    font-family: "Fascinate Inline";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    z-index: 2;
+}

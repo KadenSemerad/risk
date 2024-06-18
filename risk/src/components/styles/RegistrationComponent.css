@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.registration-component{
+    background-color: var(--LIGHT-colors-light-blue, #4786A0);
+    height: 100vh;
+    width: 100%;
+}
+
+.registration-form {
+    width: 972px;
+    height: 630px;
+    margin: auto;
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign-up-text {
+    width: 290px;
+    height: 80px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--MAIN-colors-main-blue, #264653);
+    font-family: "Fascinate Inline";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0 auto; 
+}
+
+.first-name-label,
+.last-name-label, 
+.email-label,
+.username-label,
+.password-label, 
+.confirm-password-label{
+    color: var(--Light, #F4F5F8);
+    font-family: Raleway;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.confirm-password-label{
+    margin-left: 10px;
+}
+
+.first-name-label, 
+.last-name-label, 
+.email-label{
+   margin-left: 14px;
+}
+
+.email-input,
+.username-input,
+.password-input,
+.confirm-password-input,
+.first-name-input,
+.last-name-input {
+    color: white;
+    font-family: Raleway;
+    font-size: 28px;
+    display: flex;
+    width: 473px;
+    height: 62px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: var(--MAIN-colors-main-orange, #F4A261);
+}
+
+.password-input, 
+.confirm-password-input {
+    width: 972px;
+}
+
+.name-inputs, 
+.user-email-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first-name-input, 
+.email-input {
+    margin-right: 20px;
+}
+
+.error-message {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.registration-submit-button {
+    width: 196px;
+    height: 62px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: var(--MAIN-colors-main-blue, #264653);
+    margin-top: 20px;
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 2;
+    -webkit-text-stroke-color: var(--LIGHT-colors-light-blue, #4786A0);
+    font-family: Fascinate;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    cursor: pointer;
+}

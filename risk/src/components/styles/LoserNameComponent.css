@@ -1,0 +1,23 @@
+.loser-name-component{
+    position: absolute;
+    top: calc(50% + 330px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 444px;
+    height: 165px;
+    background-color: #EC8D75;
+    border-radius: 20px;
+    border: 2px solid #000000;
+    gap: 0px;
+    }
+    
+    .username {
+    width: 100%;
+    height: 100%;
+    font-family: Raleway;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 165px;
+    text-align: center;
+    display: block;
+    }

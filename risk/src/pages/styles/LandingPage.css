@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.landing-page-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; 
+    background: var(--LIGHT-colors-light-blue, #4786A0);
+}
+
+.landing-page-img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.info-container {
+    width: 713px;
+    height: 540px;
+    position: relative;
+    display: inline-flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    z-index: 2;
+}
+
+.title {
+    width: 689px;
+    height: 316px; 
+    color: #FFF; 
+    text-align: center;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: var(--DARK-colors-dark-blue, #172B33);
+    font-family: Fascinate Inline;
+    font-size: 280px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal; 
+}
+
+.tagline {
+    width: 649px;
+    height: 40px; 
+    color: var(--Light, #F4F5F8);
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    font-family: Raleway;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal; 
+}
+
+.landing-page-login-button,
+.landing-page-sign-up-button {
+    display: flex;
+    width: 350px;
+    height: 59px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: var(--DARK-colors-dark-blue, #172B33);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.login-button-text,
+.sign-up-button-text {
+    color: var(--Light, #F4F5F8);
+    text-align: center;
+    font-family: Fascinate;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal; 
+}

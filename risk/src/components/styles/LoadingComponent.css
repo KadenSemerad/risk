@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.loading-component-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dice-loading-text {   
+    color: #FFF;
+    font-family: "Fascinate Inline";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 20px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--MAIN-colors-main-blue, #264653);
+}

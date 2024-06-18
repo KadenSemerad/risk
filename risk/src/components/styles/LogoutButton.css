@@ -1,0 +1,23 @@
+.logout-button{
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 359px;
+    height: 45px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: var(--DARK-colors-dark-blue, #172B33);
+
+    /* text styling */
+    color: #FFF;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 26px;
+    font-weight: 400;
+}

@@ -1,0 +1,24 @@
+.add-friend-button{
+    display: flex;
+    width: 230px;
+    height: 59px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 2px solid #000;    
+    background: var(--MAIN-colors-main-blue, #264653); 
+    color: #FFF;
+
+    /* text styling */
+    text-align: center;
+    font-family: Fascinate;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    background: var(--MAIN-colors-main-blue, #264653); 
+    white-space: normal;
+}

@@ -1,0 +1,15 @@
+.start_matchmaking_button {
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: var(--DARK-colors-dark-blue, #172B33);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 350px;
+    height: 59px;
+    color: var(--Light, #F4F5F8);
+    text-align: center;
+    font-family: Fascinate;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}

@@ -1,0 +1,66 @@
+.winner-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--LIGHT-colors-light-blue, #4786A0);
+    background-size: cover;
+}
+
+
+
+.winner-container{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    
+}
+
+.large-circle{
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url("/src/assets/winner-trophy.png");
+    background-size: 72%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%); 
+    gap: 0px;
+    background-color: #FFFFF7;
+    border-radius: 50%;
+    border: 2px solid #000000
+}
+
+.winner-title{
+top: calc(50% + 200px);
+left: 50%;
+transform: translateX(-50%);
+position: absolute;
+padding: 5px 5px 0px 0px;
+gap: 10px;
+border-radius: 10px 10px 0px 0px;
+border: 2px 0px 0px 0px;
+opacity: 0px;
+background: #264653;
+border: 2px solid #000000
+}
+
+.winner-message{
+font-size: 50px;
+font-weight: 700;
+line-height: 58.7px;
+text-align: right;
+color: white;
+gap: 0px;
+opacity: 0px;
+padding: 10px;
+font-family: Raleway;
+}

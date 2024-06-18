@@ -1,0 +1,82 @@
+.game_profile_container {
+    position: relative;
+    width: 405px;
+    height: 152px;
+}
+
+.phase_indicator {
+    position: absolute;
+    top: -45px;
+    left: 76.5px;
+    z-index: 0;
+    height: 55px;
+    width: 252px;
+    border-radius: 10px;
+    background: var(--MAIN-colors-main-blue, #264653); 
+    display: inline-flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+.phase_indicator_text {
+    color: #FFF;
+    text-align: right;
+    font-family: Raleway;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+
+.game_profile_user_name {
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    color: #000;
+    text-align: right;
+    font-family: Raleway;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.territory_count {
+    z-index: 3;
+    color: black;
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.game_profile_circle {
+    position: absolute;
+    top: -17px;
+    left: -142.5px;
+    z-index: 2;
+}
+
+.game_profile_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 4px solid #000;
+    background: var(--LIGHT-colors-light-sienna, #EC8D75);
+}
+
+.countdown-circle {
+    transition: stroke-dashoffset 1s linear;
+}

@@ -1,0 +1,45 @@
+
+  .leaderboard-modal-background {
+    position: fixed;
+    width: 75%;
+    height: 100vh;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: #264653;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    align-items: center;
+    margin-top: 200px; 
+    gap: 10px; 
+  }
+  
+  .leaderboard-title-text-background {
+    width: 80%;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: #172B33;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+
+  .leaderboard-modal-card-title {
+    color: #FFF;
+    text-align: center;
+    font-family: "Fascinate Inline";
+    font-size: 95px;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+  }
+
+  
+
+  

@@ -1,0 +1,25 @@
+.indicator-button {
+    color: white;
+    background: var(--MAIN-colors-main-blue, #264653);
+    border-radius: 10px;
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: none;
+}
+
+.fortify-input {
+    margin-right: 15px;
+    font-family: Raleway;
+    font-size: 28px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    width: 200px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    outline: none;
+    color: var(--MAIN-colors-main-blue, #264653);
+}

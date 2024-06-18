@@ -1,0 +1,16 @@
+.game-board {
+    display: grid;
+}
+
+.territory {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.troop_count {
+    color: white;
+}
